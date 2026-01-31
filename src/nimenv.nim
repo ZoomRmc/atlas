@@ -94,7 +94,7 @@ proc setupNimEnv*(nimVersion: string; keepCsources: bool) =
         else:
           exec "make"
     let nimExe0 = ".." / csourcesVersion / "bin" / "nim".addFileExt(ExeExt)
-    let dir = Path(depsDir() / nimDest)
+    let dir = depsDir() / nimDest
     withDir $(depsDir() / nimDest):
       let nimExe = "bin" / "nim".addFileExt(ExeExt)
       copyFileWithPermissions nimExe0, nimExe
